@@ -37,18 +37,36 @@ app.get('/', (req, res) => {
 
     })
 });
+app.get('/asc', (req, res) => {
+    user.find({},[], {sort: {first_name: 1}}, (err, data) => {
+        if (err) return console.log('oops', err);
+        if (data.length) {
+
+        }
+        res.render('index', {userList:data});
+
+    })
+});
+app.get('/desc', (req, res) => {
+    user.find({},[], {sort: {first_name: -1}}, (err, data) => {
+        if (err) return console.log('oops', err);
+        if (data.length) {
+
+        }
+        res.render('index', {userList:data});
+
+    })
+});
 
 app.get('/search/:string', (req, res) => {
-    // user.find({$or:[ {'first_name': req.params.string}, {'last_name':req.params.string}, {'age ':req.params.string} ]}, (err, data) => {
-    //     if (err) return console.log('oops');
-    //     if (data.length) {
-    //
-    //     }
-    //     res.render('index', {userList:data});
-    //     console.log(data);
-    //
-    // })
-    console.log(user.where('first_name').$regex(/^test/));
+    user.find({first_name: new RegExp(req.params.string, "i")}, (err, data) => {
+        if (err) return console.log('oops', err);
+        if (data.length) {
+
+        }
+        res.render('index', {userList:data});
+
+    })
 });
 
 
