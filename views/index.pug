@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        title List Of Users
+    body
+        a(href='/adduser') Add User
+        table
+            tr
+                th First Name
+                th Last Name
+                th Email
+                th
+                th
+            tr
+            for user in userList
+                tr
+                    td #{user.first_name}
+                    td #{user.last_name}
+                    td #{user.email}
+                    td
+                        a(href='/edit/' + user.username) edit
+                    td
+                        a(href='/delete/' + user.username) delete

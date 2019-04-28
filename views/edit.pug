@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+        title List Of Users
+    body
+        h4 Edit User
+        form(method='post' action='/edit/' + user.username)
+            input(type='text' name='username' placeholder='User iD' value=user.username)
+            input(type='text' name='first' placeholder='first name' value=user.first_name)
+            input(type='text' name='last' placeholder='last name' value=user.last_name)
+            input(type='email' name='email' placeholder='email' value=user.email)
+            input(type='number' name='age' placeholder='age' value=user.age)
+            button(type='submit') Save Changes
