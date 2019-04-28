@@ -1,7 +1,6 @@
 {
   "name": "usermanager",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,5 +11,14 @@
     "express": "^4.16.4",
     "mongoose": "^5.5.2",
     "pug": "^2.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fishy4341/User-Management.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fishy4341/User-Management/issues"
+  },
+  "homepage": "https://github.com/fishy4341/User-Management#readme",
+  "description": ""
 }
